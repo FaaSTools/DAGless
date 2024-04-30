@@ -1,0 +1,14 @@
+order,function_provider,function_region,function_memory,function_memory_unit,storage_region,storage_provider,transfer_type,file_path,file_size_mb,transfer_time_ns
+1,gcp,europe-west1,768,MB,europe-west1,gcp,download,/function/NC_000913.3-hipA7.fasta.bwt,4.641732,230088539.5
+1,gcp,europe-west1,768,MB,europe-west1,gcp,download,/function/bwa,1.307192,213870693.5
+1,gcp,europe-west1,768,MB,europe-west1,gcp,download,/function/hipa7_reads_R1.fastq,50.29778,1659335443.5
+1,gcp,europe-west1,768,MB,europe-west1,gcp,download,/function/hipa7_reads_R2.fastq,50.29778,1601475421.5
+1,gcp,europe-west1,768,MB,europe-west1,gcp,upload,/function/aln_sa1.sai,2.21422,686609268.5
+1,gcp,europe-west1,768,MB,europe-west1,gcp,upload,/function/aln_sa2.sai,2.084548,574679519.0
+0,gcp,europe-west1,768,MB,europe-west1,gcp,download,/function/NC_000913.3-hipA7.fasta,4.699745,279071543.5
+0,gcp,europe-west1,768,MB,europe-west1,gcp,download,/function/bwa,1.307192,98785179.0
+0,gcp,europe-west1,768,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.amb,1.2e-05,131038382.5
+0,gcp,europe-west1,768,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.ann,9.8e-05,60600471.5
+0,gcp,europe-west1,768,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.bwt,4.641732,1022389124.5
+0,gcp,europe-west1,768,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.pac,1.160415,205384848.5
+0,gcp,europe-west1,768,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.sa,2.32088,835170512.0

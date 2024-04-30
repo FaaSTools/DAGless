@@ -1,0 +1,128 @@
+{
+    "pathToInputProject": "pathToInputProject",
+    "pathToSplitFunctions": "pathToSplitFunctions",
+    "pathToDirMonitor": "pathToDirMonitor",
+    "pathToFunctionFiles": "pathToFunctionFiles",
+    "functionProviders": [
+        "AWS"
+    ],
+    "dataTransferMode": "MANUAL",
+    "traceFileTransfer": true,
+    "workflowInputs": [],
+    "workflowOutputs": [],
+    "bucketDeployment": {
+        "provider_name": "aws",
+        "project_id": "",
+        "bucket_region": "eu-central-1"
+    },
+    "entryPoint": "dev.simon.Main",
+    "GCPProjectId": "",
+    "GCPServiceAccountEmail": "",
+    "AWSLambdaRoleArn": "",
+    "configSplitFunctions": [
+        {
+            "order": 0,
+            "statementRange": {
+                "start": 1,
+                "end": 5
+            },
+            "provider": "aws",
+            "region": "eu-central-1",
+            "memory": 1536,
+            "parallel": false,
+            "downloadFilePaths": [
+                "/function/bwa",
+                "/function/NC_000913.3-hipA7.fasta"
+            ],
+            "uploadFilePaths": [
+                "/function/NC_000913.3-hipA7.fasta.bwt",
+                "/function/NC_000913.3-hipA7.fasta.sa",
+                "/function/NC_000913.3-hipA7.fasta.ann",
+                "/function/NC_000913.3-hipA7.fasta.amb",
+                "/function/NC_000913.3-hipA7.fasta.pac"
+            ],
+            "iterationDependencies": [],
+            "monitorDirectory": false,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 1,
+            "statementRange": {
+                "start": 6,
+                "end": 6
+            },
+            "provider": "aws",
+            "region": "eu-central-1",
+            "memory": 1536,
+            "parallel": true,
+            "downloadFilePaths": [],
+            "uploadFilePaths": [],
+            "iterationDependencies": [
+                {
+                    "downloadFilePaths": [
+                        "/function/bwa",
+                        "/function/NC_000913.3-hipA7.fasta.bwt",
+                        "/function/hipa7_reads_R1.fastq"
+                    ],
+                    "uploadFilePaths": [
+                        "/function/aln_sa1.sai"
+                    ],
+                    "iterationObject": {
+                        "inputFasta": "NC_000913.3-hipA7.fasta",
+                        "inputFastq": "hipa7_reads_R1.fastq",
+                        "outputSai": "aln_sa1.sai"
+                    }
+                },
+                {
+                    "downloadFilePaths": [
+                        "/function/bwa",
+                        "/function/hipa7_reads_R2.fastq",
+                        "/function/NC_000913.3-hipA7.fasta.bwt"
+                    ],
+                    "uploadFilePaths": [
+                        "/function/aln_sa2.sai"
+                    ],
+                    "iterationObject": {
+                        "inputFasta": "NC_000913.3-hipA7.fasta",
+                        "inputFastq": "hipa7_reads_R2.fastq",
+                        "outputSai": "aln_sa2.sai"
+                    }
+                }
+            ],
+            "monitorDirectory": false,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 2,
+            "statementRange": {
+                "start": 7,
+                "end": 14
+            },
+            "provider": "aws",
+            "region": "eu-central-1",
+            "memory": 1024,
+            "parallel": false,
+            "downloadFilePaths": [
+                "/function/bwa",
+                "/function/hipa7_reads_R2.fastq",
+                "/function/aln_sa1.sai",
+                "/function/hipa7_reads_R1.fastq",
+                "/function/NC_000913.3-hipA7.fasta.bwt",
+                "/function/aln_sa2.sai",
+                "/function/NC_000913.3-hipA7.fasta.sa",
+                "/function/NC_000913.3-hipA7.fasta.ann",
+                "/function/NC_000913.3-hipA7.fasta.amb",
+                "/function/NC_000913.3-hipA7.fasta.pac"
+            ],
+            "uploadFilePaths": [
+                "/function/NC_000913.3.sam",
+                "/function/NC_000913.3sorted.bam",
+                "/function/NC_000913.3sorted.bam.bai",
+                "/function/NC_000913.3sorted.sam"
+            ],
+            "iterationDependencies": [],
+            "monitorDirectory": false,
+            "measureExecutionTime": true
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+Median: 36713618678.0 -> 36.71362s
+
+Align: 
+FunctionDeployment: function_memory_mb=256.0, code_exec_time_ns=429329263468.5, cost=2.000970930527241, runtime=477.17926896800003, function_region=eu-central-1, storage_region=eu-central-1download_files=4, upload_files=2, download_size_mb=106.56296400000001, upload_size_mb=4.298768
+Runtime: 477.17926896800003
+
+TOTAL RUNTIME = 513.892888
+
+RUNTIME COST (USD):
+Monolith: 10.198h * 0.0116 USD/h = 0.1182 USD
+
+FILE TRANSFER COST (USD):
+Monolith upload file transfer cost: 1 * 1000 Uploads = 1000 * (0.005 / 1000) = 0.005$ 
+Monolith download file transfer cost: 6 * 1000 = 6000 * (0.0004 / 1000) = 0.0024$
+
+Align COMBINED COST (USD):
+
+TOTAL COST = 2.0009709305272412 + 0.1182 + 0.005 + 0.0024 = 2.1265709305272412$

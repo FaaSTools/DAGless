@@ -1,0 +1,810 @@
+[
+  {
+    "order": 0,
+    "statementRange": {
+      "start": 1,
+      "end": 6
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [],
+    "outputVariables": [
+      {
+        "identifier": "inputDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "projectPairs",
+        "type": "java.util.List<dev.simon.model.ProjectPair>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "workingDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": false
+  },
+  {
+    "order": 1,
+    "statementRange": {
+      "start": 7,
+      "end": 7
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "inputDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "projectPairs",
+        "type": "java.util.List<dev.simon.model.ProjectPair>",
+        "parallel": "true"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "workingDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "inputDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "workingDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": true
+  },
+  {
+    "order": 2,
+    "statementRange": {
+      "start": 8,
+      "end": 17
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "inputDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "workingDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "diffPairs",
+        "type": "java.util.List<dev.simon.model.DiffPair>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": false
+  },
+  {
+    "order": 3,
+    "statementRange": {
+      "start": 18,
+      "end": 18
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "diffPairs",
+        "type": "java.util.List<dev.simon.model.DiffPair>",
+        "parallel": "true"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "diffPairs",
+        "type": "java.util.List<dev.simon.model.DiffPair>",
+        "parallel": "true"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": true
+  },
+  {
+    "order": 4,
+    "statementRange": {
+      "start": 19,
+      "end": 22
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "diffPairs",
+        "type": "java.util.List<dev.simon.model.DiffPair>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "fitsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "statFile",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": false
+  },
+  {
+    "order": 5,
+    "statementRange": {
+      "start": 23,
+      "end": 24
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "fitsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "statFile",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctionsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "fitsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": false
+  },
+  {
+    "order": 6,
+    "statementRange": {
+      "start": 25,
+      "end": 28
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctionsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "fitsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctedDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctionsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "modPImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": false
+  },
+  {
+    "order": 7,
+    "statementRange": {
+      "start": 29,
+      "end": 29
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctedDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctionsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "modPImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "pImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctedDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctionsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "modPImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": false
+  },
+  {
+    "order": 8,
+    "statementRange": {
+      "start": 30,
+      "end": 31
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctedDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctionsTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "inputFits",
+        "type": "java.util.List<java.lang.String>",
+        "parallel": "false"
+      },
+      {
+        "identifier": "modPImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctedDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": false
+  },
+  {
+    "order": 9,
+    "statementRange": {
+      "start": 32,
+      "end": 33
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "correctedDir",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "mosaicFits",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": false
+  },
+  {
+    "order": 10,
+    "statementRange": {
+      "start": 34,
+      "end": 35
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "cImagesTbl",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "mosaicFits",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "regionHdr",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "mosaicFits",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "mosaicShrinked",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "parallel": false
+  },
+  {
+    "order": 11,
+    "statementRange": {
+      "start": 36,
+      "end": 37
+    },
+    "downloadFilePaths": [],
+    "uploadFilePaths": [],
+    "forEachIterations": [],
+    "inputVariables": [
+      {
+        "identifier": "montage",
+        "type": "Montage",
+        "parallel": "false"
+      },
+      {
+        "identifier": "mosaicFits",
+        "type": "java.lang.String",
+        "parallel": "false"
+      },
+      {
+        "identifier": "mosaicShrinked",
+        "type": "java.lang.String",
+        "parallel": "false"
+      }
+    ],
+    "outputVariables": [],
+    "parallel": false
+  }
+]

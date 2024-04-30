@@ -1,0 +1,19 @@
+Median: 44694168130.0 -> 44.69s
+mProjectPP: 282177816243.5 -> 282.1778
+mDiffFit: 306177601947.0 -> 306.1776
+mBackground: 356378598820.5 -> 356.3786
+
+TOTAL RUNTIME = 989.423s
+
+RUNTIME COST (USD):
+Monolith: 12.41h * 0.0116 USD/h = 0.144056 USD
+Monolith upload file transfer cost: 2 * 1000 Uploads = 2000 * (0.005 / 1000) = 0.01$ 
+Monolith download file transfer cost: 102 * 1000 = 102000 * (0.0004 / 1000) = 0.04$
+
+FUNCTION COST:
+mProjectPP: 1.510106849924428
+mDiffFit: 3.5771374773503086
+mBackground: 1.8326909175688262
+
+TOTAL COST = 7.11$
+

@@ -1,0 +1,153 @@
+{
+    "pathToInputProject": "pathToInputProject",
+    "pathToSplitFunctions": "pathToSplitFunctions",
+    "pathToDirMonitor": "pathToDirMonitor",
+    "pathToFunctionFiles": "pathToFunctionFiles",
+    "functionProviders": [
+        "GCP"
+    ],
+    "dataTransferMode": "MANUAL",
+    "traceFileTransfer": true,
+    "workflowInputs": [],
+    "workflowOutputs": [],
+    "configSplitFunctions": [
+        {
+            "order": 0,
+            "statementRange": {
+                "start": 1,
+                "end": 6
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 1,
+            "statementRange": {
+                "start": 7,
+                "end": 7
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true,
+            "parallel": false
+        },
+        {
+            "order": 2,
+            "statementRange": {
+                "start": 8,
+                "end": 17
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 3,
+            "statementRange": {
+                "start": 18,
+                "end": 18
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true,
+            "parallel": false
+        },
+        {
+            "order": 4,
+            "statementRange": {
+                "start": 19,
+                "end": 22
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 5,
+            "statementRange": {
+                "start": 23,
+                "end": 24
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 6,
+            "statementRange": {
+                "start": 25,
+                "end": 28
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 7,
+            "statementRange": {
+                "start": 29,
+                "end": 29
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true,
+            "parallel": false
+        },
+        {
+            "order": 8,
+            "statementRange": {
+                "start": 30,
+                "end": 31
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 9,
+            "statementRange": {
+                "start": 32,
+                "end": 33
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 10,
+            "statementRange": {
+                "start": 34,
+                "end": 35
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 11,
+            "statementRange": {
+                "start": 36,
+                "end": 37
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        }
+    ],
+    "bucketDeployment": {
+            "provider_name": "gcp",
+            "project_id": "",
+            "bucket_region": "europe-west1"
+    },
+    "entryPoint": "dev.simon.Main",
+    "GCPProjectId": "",
+    "AWSLambdaRoleArn": "",
+    "functionDeployment": [
+        {
+            "provider_name": "gcp",
+            "deployment_region": "europe-west1",
+            "function_regions": [
+                "europe-west1"
+            ],
+            "invocation_count": 5,
+            "memory_config": [
+                128,
+                256,
+                512,
+                768,
+                1024,
+                1536,
+                2048
+            ]
+        }
+    ]
+}

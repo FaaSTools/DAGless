@@ -1,0 +1,12 @@
+order,function_provider,function_region,function_memory,function_memory_unit,storage_region,storage_provider,transfer_type,file_path,file_size_mb,transfer_time_ns
+1,aws,eu-central-1,128,MB,eu-central-1,aws,download,/function/NC_000913.3-hipA7.fasta,4.699745,15109139579.0
+1,aws,eu-central-1,128,MB,eu-central-1,aws,download,/function/bwa,1.325672,1561296669.0
+1,aws,eu-central-1,128,MB,eu-central-1,aws,upload,/function/NC_000913.3-hipA7.fasta.amb,1.2e-05,321955813.5
+1,aws,eu-central-1,128,MB,eu-central-1,aws,upload,/function/NC_000913.3-hipA7.fasta.ann,9.8e-05,367166176.0
+1,aws,eu-central-1,128,MB,eu-central-1,aws,upload,/function/NC_000913.3-hipA7.fasta.bwt,4.641732,3949209456.0
+1,aws,eu-central-1,128,MB,eu-central-1,aws,upload,/function/NC_000913.3-hipA7.fasta.pac,1.160415,2519707517.0
+1,aws,eu-central-1,128,MB,eu-central-1,aws,upload,/function/NC_000913.3-hipA7.fasta.sa,2.32088,2500476798.5
+6,aws,eu-central-1,128,MB,eu-central-1,aws,download,/function/NC_000913.3sorted.sam,120.89444,97839113700.0
+6,aws,eu-central-1,128,MB,eu-central-1,aws,upload,/function/NC_000913.3sorted.bam,36.632774,29347131947.0
+7,aws,eu-central-1,128,MB,eu-central-1,aws,download,/function/NC_000913.3sorted.bam,36.632774,30210990542.5
+7,aws,eu-central-1,128,MB,eu-central-1,aws,upload,/function/NC_000913.3sorted.bam.bai,0.014016,439693943.0

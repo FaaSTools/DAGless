@@ -1,0 +1,2 @@
+Overall cost: 3.9597749999999996
+Overall runtime: 99.22729514575
