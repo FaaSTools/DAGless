@@ -1,0 +1,55 @@
+{% if bucket_provider == "gcp" %}
+# Create the bucket to store the monitoring and function files for each region
+resource "google_storage_bucket" "file-bucket-{{ bucket_region }}-{{nonce}}" {
+  name                        = "file-bucket-{{bucket_region}}-{{nonce}}"
+  location                    = "{{ bucket_region }}"
+  uniform_bucket_level_access = true
+  force_destroy               = true
+}
+
+# Create the monitoring and function files for each region
+resource "google_storage_bucket_object" "object-bucket-{{ bucket_region }}-monitor" {
+  for_each = fileset("{{ path_to_dir_monitor }}/gcp/", "**")
+
+  name = "monitor/${each.value}"
+  source = "{{ path_to_dir_monitor}}/gcp/${each.value}"
+  bucket = google_storage_bucket.file-bucket-{{ bucket_region }}-{{ nonce }}.name
+}
+
+# Create the monitoring and function files for each region
+resource "google_storage_bucket_object" "object-bucket-{{ bucket_region }}-function" {
+  for_each = fileset("{{ path_to_function_files }}/gcp/", "**")
+
+  name = "function/${each.value}"
+  source = "{{ path_to_function_files }}/gcp/${each.value}"
+  bucket = google_storage_bucket.file-bucket-{{ bucket_region }}-{{ nonce }}.name
+}
+
+{% elif bucket_provider == "aws" %}
+# S3 bucket to store the Lambda function code, and the monitoring and function files for each region
+resource "aws_s3_bucket" "file-bucket-{{ bucket_region }}-{{nonce}}" {
+  provider  = aws.{{ bucket_region }}
+  bucket    = "file-bucket-{{ bucket_region }}-{{nonce}}"
+  force_destroy = true
+}
+
+# Upload the monitoring files to the S3 bucket for each region
+resource "aws_s3_object" "{{ bucket_region }}-monitor" {
+  for_each = fileset("{{ path_to_dir_monitor}}/aws/", "**")
+
+  bucket = aws_s3_bucket.file-bucket-{{ bucket_region }}-{{nonce}}.bucket
+  key = "monitor/${each.value}"
+  source = "{{ path_to_dir_monitor }}/aws/${each.value}"
+  etag = filemd5("{{ path_to_dir_monitor }}/aws/${each.value}")
+}
+
+# Upload the function files to the S3 bucket
+resource "aws_s3_object" "{{ bucket_region }}-function" {
+  for_each = fileset("{{ path_to_function_files }}/aws/", "**")
+
+  bucket = aws_s3_bucket.file-bucket-{{ bucket_region }}-{{nonce}}.bucket
+  key = "function/${each.value}"
+  source = "{{path_to_function_files }}/aws/${each.value}"
+  etag = filemd5("{{ path_to_function_files }}/aws/${each.value}")
+}
+{% endif %}

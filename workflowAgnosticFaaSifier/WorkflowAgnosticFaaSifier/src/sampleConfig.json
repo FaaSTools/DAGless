@@ -1,0 +1,47 @@
+{
+    "pathToInputProject": "pathToTheMavenProjectContainingTheWorkflowMainMethod",
+    "pathToSplitFunctions": "pathToTheDirectoryForTheCreatedFunctions",
+    "pathToDirMonitor": "pathToTheDirectoryMonitorDirContainingTheExecutableFiles",
+    "pathToFunctionFiles": "pathToFilesThatShouldBeContainedInTheFunction",
+    "functionProviders": [
+      "AWS", "GCP"
+    ],
+    "dataTransferMode": "MANUAL",
+    "traceFileTransfer": true,
+    "directoryMonitoring": true,
+    "measureExecutionTime": true,
+    "workflowInputs": [],
+    "workflowOutputs": [],
+    "splitRules": [
+      "CUSTOM_METHOD_INVOCATION",
+      "FOR_EACH"
+    ],
+    "bucketDeployment": {
+      "provider_name": "either aws or gcp",
+      "project_id": "the id of the google cloud project, keep empty if aws",
+      "bucket_region": "region of the bucket"
+    },
+    "entryPoint": "dev.dagless.Main",
+    "GCPProjectId": "the id of the google cloud project, keep empty if aws",
+    "GCPServiceAccountEmail": "serviveAccountEmailForGCP",
+    "AWSLambdaRoleArn": "LambdaRoleArn for Functions",
+    "functionDeployment": [
+      {
+        "provider_name": "either aws or gcp",
+        "deployment_region": "region of the deployment of the source code",
+        "function_regions": [
+          "list of regions for the functions"
+        ],
+        "invocation_count": 5,
+        "memory_config": [
+          128,
+          256,
+          512,
+          768,
+          1024,
+          1536,
+          2048
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,12 @@
+{% if gcp or bucket_provider == "gcp" %}
+provider "google" {
+  project = "{{ project_id }}"
+}
+{% endif %}
+
+{% for provider_region in provider_regions_aws %}
+provider "aws" {
+    region = "{{ provider_region }}"
+    alias = "{{ provider_region }}"
+}
+{% endfor %}

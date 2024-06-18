@@ -1,0 +1,112 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 4.0"
+    }
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.0"
+    }
+  }
+}
+
+
+
+{% for deployment in optimized_deployment %}
+
+    {% if deployment.provider == "gcp" %}
+
+# Create the bucket to store the monitoring and function files for each region
+resource "google_storage_bucket" "function-bucket-{{ deployment.order }}-{{ deployment.region }}" {
+  name                        = "function-bucket-{{ deployment.order }}-{{ deployment.region }}"
+  location                    = "{{ deployment.region }}"
+  uniform_bucket_level_access = true
+  force_destroy               = true
+}
+
+# Create the zip file with the function code for each region and function
+data "archive_file" "archive-{{ deployment.order }}-{{ deployment.region }}" {
+  type        = "zip"
+  source_dir = "{{ path_to_split_functions }}/{{ deployment.function_name }}/target"
+  output_path = "{{ path_to_split_functions }}/{{ deployment.function_name }}/archives/google-cloud-function-source.zip"
+}
+
+# Upload the zip file with the function code to the bucket for each region and function
+resource "google_storage_bucket_object" "object-bucket-{{ deployment.order }}-{{ deployment.region }}" {
+  name   = "{{ deployment.function_name }}/${data.archive_file.archive-{{ deployment.order }}-{{ deployment.region }}.output_sha}.zip"
+  bucket = google_storage_bucket.function-bucket-{{ deployment.order }}-{{ deployment.region }}.name
+  source = data.archive_file.archive-{{ deployment.order }}-{{ deployment.region }}.output_path
+}
+
+# Create the function for each region and function and memory configuration
+resource "google_cloudfunctions2_function" "function-{{ deployment.function_name }}-{{ deployment.region }}-{{deployment.memory}}" {
+  name        = "{{ deployment.function_name }}-{{ deployment.region }}-{{deployment.memory}}MB"
+  location    = "{{ deployment.region }}"
+  description = "My function in {{ deployment.region }} with {{ deployment.memory}} MB memory of gen2"
+
+  build_config {
+    runtime     = "java17"
+    entry_point = "{{ entry_point }}"
+    source {
+      storage_source {
+        bucket = google_storage_bucket.function-bucket-{{ deployment.order }}-{{ deployment.region }}.name
+        object = google_storage_bucket_object.object-bucket-{{ deployment.order }}-{{ deployment.region }}.name
+      }
+    }
+  }
+
+  service_config {
+    max_instance_count = 10
+    available_memory   = "{{ deployment.memory }}Mi"
+    timeout_seconds    = 900
+    environment_variables = {
+      PROVIDER = "gcp"
+      REGION = "{{ deployment.region }}"
+      MEMORY = "{{ deployment.memory }}"
+    }
+     service_account_email = "{{ service_account_email }}"
+  }
+}
+
+    {% endif %}
+
+    {% if deployment.provider == "aws" %}
+# S3 bucket to store the Lambda function code, and the monitoring and function files for each region
+resource "aws_s3_bucket" "function-bucket-{{ deployment.order }}-{{ deployment.region }}" {
+  provider  = aws.{{ deployment.region }}
+  bucket    = "function-bucket-{{ deployment.order }}-{{ deployment.region }}"
+  force_destroy = true
+}
+
+# Upload the Lambda function code (Java .jar file) to the S3 bucket for each region and function
+resource "aws_s3_object" "object-bucket-{{ deployment.order }}-{{ deployment.region }}" {
+  provider  = aws.{{ deployment.region }}
+  bucket    = aws_s3_bucket.function-bucket-{{ deployment.order }}-{{ deployment.region }}.bucket
+  key       = "source/{{ deployment.function_name }}/split-function.jar"
+  source    = "{{ path_to_split_functions }}/{{ deployment.function_name }}/target/split-function.jar"
+}
+
+
+# Create the Lambda function for each region and function and memory configuration
+resource "aws_lambda_function" "function-{{ deployment.function_name }}-{{ deployment.region }}-{{deployment.memory}}" {
+  provider         = aws.{{ deployment.region }}
+  function_name    = "{{ deployment.function_name }}-{{ deployment.region }}-{{deployment.memory}}MB"
+  role             = "{{ lambda_role_arn }}"
+  handler          = "{{ entry_point }}::handleRequest"
+  runtime          = "java17"
+  s3_bucket        = aws_s3_bucket.function-bucket-{{ deployment.order }}-{{ deployment.region }}.bucket
+  s3_key           = aws_s3_object.object-bucket-{{ deployment.order }}-{{ deployment.region }}.key
+  source_code_hash = filebase64sha256("{{ path_to_split_functions }}/{{ deployment.function_name }}/target/split-function.jar")
+  timeout          = 900
+  memory_size      = {{ deployment.memory }}
+
+  environment {
+    variables = {
+      PROVIDER = "aws"
+    }
+  }
+}
+{% endif %}
+
+{% endfor%}

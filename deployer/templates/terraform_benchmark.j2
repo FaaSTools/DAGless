@@ -1,0 +1,116 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 4.0"
+    }
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.0"
+    }
+  }
+}
+
+{% if gcp %}
+# Create the bucket to store the monitoring and function files for each region
+resource "google_storage_bucket" "function-bucket-{{deployment_region_gcp}}-{{nonce}}" {
+  name                        = "function-bucket-{{deployment_region_gcp}}-{{nonce}}"
+  location                    = "{{ deployment_region_gcp }}"
+  uniform_bucket_level_access = true
+  force_destroy               = true
+}
+
+{% for function_gcp in functions_gcp%}
+# Create the zip file with the function code for each region and function
+data "archive_file" "archive-{{function_gcp}}-{{deployment_region_gcp}}" {
+  type        = "zip"
+  source_dir = "{{ path_to_split_functions }}/{{ function_gcp }}/target"
+  output_path = "{{ path_to_split_functions }}/{{ function_gcp }}/archives/google-cloud-function-source.zip"
+}
+
+# Upload the zip file with the function code to the bucket for each region and function
+resource "google_storage_bucket_object" "object-bucket-{{function_gcp}}-{{deployment_region_gcp}}" {
+  name   = "{{function_gcp}}/${data.archive_file.archive-{{function_gcp}}-{{deployment_region_gcp}}.output_sha}.zip"
+  bucket = google_storage_bucket.function-bucket-{{deployment_region_gcp}}-{{nonce}}.name
+  source = data.archive_file.archive-{{function_gcp}}-{{deployment_region_gcp}}.output_path
+}
+
+{% for region_gcp in function_regions_gcp %}
+{% for memory_config_gcp in memory_configs_gcp %}
+# Create the function for each region and function and memory configuration
+resource "google_cloudfunctions2_function" "function-{{function_gcp}}-{{region_gcp}}-{{memory_config_gcp}}" {
+  name        = "{{function_gcp}}-{{region_gcp}}-{{memory_config_gcp}}MB"
+  location    = "{{ region_gcp }}"
+  description = "My function in {{ region_gcp }} with {{ memory_config_gcp}} MB memory of gen2"
+
+  build_config {
+    runtime     = "java17"
+    entry_point = "{{ entry_point }}"
+    source {
+      storage_source {
+        bucket = google_storage_bucket.function-bucket-{{deployment_region_gcp}}-{{nonce}}.name
+        object = google_storage_bucket_object.object-bucket-{{function_gcp}}-{{deployment_region_gcp}}.name
+      }
+    }
+  }
+
+  service_config {
+    max_instance_count = 10
+    available_memory   = "{{ memory_config_gcp }}Mi"
+    timeout_seconds    = 900
+    environment_variables = {
+      PROVIDER = "gcp"
+      REGION = "{{ region_gcp }}"
+      MEMORY = "{{ memory_config_gcp }}"
+    }
+     service_account_email = "{{ service_account_email }}"
+  }
+}
+{% endfor%}
+{% endfor %}
+{% endfor %}
+{% endif %}
+
+{% if aws %}
+{% for region_aws in function_regions_aws %}
+# S3 bucket to store the Lambda function code, and the monitoring and function files for each region
+resource "aws_s3_bucket" "function-bucket-{{ region_aws }}-{{nonce}}" {
+  provider  = aws.{{ region_aws }}
+  bucket    = "bucket-split-function-{{ region_aws }}-{{nonce}}"
+  force_destroy = true
+}
+
+{% for function_aws in functions_aws %}
+# Upload the Lambda function code (Java .jar file) to the S3 bucket for each region and function
+resource "aws_s3_object" "{{ region_aws }}-{{ function_aws }}-source" {
+  provider  = aws.{{ region_aws }}
+  bucket    = aws_s3_bucket.function-bucket-{{ region_aws }}-{{nonce}}.bucket
+  key       = "source/{{ function_aws }}/split-function.jar"
+  source    = "{{ path_to_split_functions }}/{{ function_aws }}/target/split-function.jar"
+}
+
+{% for memory_config_aws in memory_configs_aws %}
+# Create the Lambda function for each region and function and memory configuration
+resource "aws_lambda_function" "function-{{ function_aws }}-{{ region_aws }}-{{ memory_config_aws }}" {
+  provider         = aws.{{ region_aws }}
+  function_name    = "{{ function_aws }}-{{ region_aws }}-{{ memory_config_aws}}MB"
+  role             = "{{ lambda_role_arn}}"
+  handler          = "{{ handler_aws }}"
+  runtime          = "java17"
+  s3_bucket        = aws_s3_bucket.function-bucket-{{ region_aws }}-{{nonce}}.bucket
+  s3_key           = aws_s3_object.{{ region_aws }}-{{ function_aws }}-source.key
+  source_code_hash = filebase64sha256("{{ path_to_split_functions }}/{{ function_aws }}/target/split-function.jar")
+  timeout          = 900
+  memory_size      = {{ memory_config_aws }}
+
+  environment {
+    variables = {
+        PROVIDER = "aws"
+        REGION = "{{ region_aws }}"
+    }
+  }
+}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endif %}
