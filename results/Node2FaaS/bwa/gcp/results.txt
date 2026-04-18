@@ -1,0 +1,26 @@
+Median: 274003366059.5 -> 274,0034s
+FunctionDeployment: function_memory_mb=512, code_exec_time_ns=206997320524.5, cost=1.9981058000000003, runtime=214.80480759649998, function_region=europe-west1, storage_region=europe-west1download_files=4, upload_files=2, download_size_mb=106.544484, upload_size_mb=4.298768
+Runtime: 214.80480759649998
+
+TOTAL RUNTIME = 274,0034 + 214.80480759649998 = 488,8082s
+
+RUNTIME COST (USD):
+Monolith: 76.112h * 0.01 USD/h = 0.76112 USD
+FILE TRANSFER COST (USD):
+Monolith upload file transfer cost: 1 * 1000 Uploads = 1000 * (0.005 / 1000) = 0.005$ 
+Monolith download file transfer cost: 6 * 1000 = 6000 * (0.0004 / 1000) = 0.0024$
+
+Align COMBINED COST (USD):
+
+TOTAL COST =1.9981058000000003 + 0.76122 + 0.005 + 0.0024 = 2.7663058000000003$
+
+Machine type
+e2-micro
+CPU platform
+Intel Broadwell
+Minimum CPU platform
+None
+Architecture
+x86/64
+
+debian 12 bookworm v20240213

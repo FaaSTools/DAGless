@@ -1,0 +1,4 @@
+order,provider,region,memory,memory_unit,storage_name,storage_provider,storage_region,statement_range,parallel,parallel_factor,code_exec_time_ns,function_exec_time_ns,total_exec_time_ns,download_time_ns,upload_time_ns,invocation_latency_ns,download_bandwidth_mbs,upload_bandwidth_mbs
+4,aws,eu-central-1,128,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,11-12,False,1,114240684125.0,241522195016.5,241713054417.0,97839113700.0,29347131947.0,190859400.5,1.2357198395120232,1.2482596597640256
+5,aws,eu-central-1,128,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,13-14,False,1,13419390119.5,44202019036.0,44417413667.0,30210990542.5,439693943.0,259398460.5,1.2125873059644776,0.03192331486499393
+0,aws,eu-central-1,128.0,MB,s3://file-bucket-eu-central-1-b18aab80/,aws,eu-central-1,1-5,False,1.0,64630153225.5,92903460044.0,93483929562.5,15038560265.0,10176144220.5,580469518.5,0.4066267528720498,0.7985750592723595

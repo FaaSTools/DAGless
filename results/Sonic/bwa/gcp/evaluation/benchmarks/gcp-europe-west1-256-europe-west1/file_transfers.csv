@@ -1,0 +1,8 @@
+order,function_provider,function_region,function_memory,function_memory_unit,storage_region,storage_provider,transfer_type,file_path,file_size_mb,transfer_time_ns
+0,gcp,europe-west1,256,MB,europe-west1,gcp,download,/function/NC_000913.3-hipA7.fasta,4.699745,11796991970.0
+0,gcp,europe-west1,256,MB,europe-west1,gcp,download,/function/bwa,1.307192,951017963.0
+0,gcp,europe-west1,256,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.amb,1.2e-05,1085609121.5
+0,gcp,europe-west1,256,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.ann,9.8e-05,147770673.5
+0,gcp,europe-west1,256,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.bwt,4.641732,4881084416.0
+0,gcp,europe-west1,256,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.pac,1.160415,1040702762.5
+0,gcp,europe-west1,256,MB,europe-west1,gcp,upload,/function/NC_000913.3-hipA7.fasta.sa,2.32088,3302061897.5

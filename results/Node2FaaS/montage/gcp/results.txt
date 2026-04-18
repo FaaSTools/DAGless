@@ -1,0 +1,17 @@
+RUNTIME: 
+MEDIAN: 179989629971.0
+mProjectPP: 109471957207.0
+mDiffFit: 94169306526.5
+mBackground: 118959969101.5
+SUM = 502590862806.0 = 502.5909s
+
+COST:
+Monolith runtime costs 0.01 per hour the runtime in seconds is 179.9896. 1000 invocation would be a runtime of 179989.6s which is 49.9977 hours. 49.9977 * 0.01 = 0.499977$
+Monolith upload file transfer cost: 2 * 1000 Uploads = 2000 * (0.005 / 1000) = 0.01$ 
+Monolith download file transfer cost: 102 * 1000 = 102000 * (0.0004 / 1000) = 0.04$
+
+Monolith: 0.499977$ + 0.01$ + 0.04$ = 0.549977$
+mProjectPP: 2.0506365$
+mDiffFit: 3.6162313$
+mBackground: 2.2121863000000004
+SUM = 8.429031100000001$

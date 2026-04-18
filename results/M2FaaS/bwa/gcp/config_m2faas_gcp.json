@@ -1,0 +1,98 @@
+{
+    "pathToInputProject": "pathToInputProject",
+    "pathToSplitFunctions": "pathToSplitFunctions",
+    "pathToDirMonitor": "pathToDirMonitor",
+    "pathToFunctionFiles": "pathToFunctionFiles",
+    "functionProviders": [
+      "GCP"
+    ],
+    "dataTransferMode": "MANUAL",
+    "traceFileTransfer": true,
+    "workflowInputs": [],
+    "workflowOutputs": [],
+    "configSplitFunctions": [
+        {
+            "order": 0,
+            "statementRange": {
+                "start": 1,
+                "end": 5
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 1,
+            "statementRange": {
+                "start": 6,
+                "end": 6
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 2,
+            "statementRange": {
+                "start": 7,
+                "end": 8
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 3,
+            "statementRange": {
+                "start": 9,
+                "end": 10
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 4,
+            "statementRange": {
+                "start": 11,
+                "end": 12
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        },
+        {
+            "order": 5,
+            "statementRange": {
+                "start": 13,
+                "end": 14
+            },
+            "directoryMonitoring": true,
+            "measureExecutionTime": true
+        }
+    ],
+    "bucketDeployment": {
+            "provider_name": "gcp",
+            "project_id": "",
+            "bucket_region": "europe-west1"
+    },
+    "entryPoint": "dev.simon.Main",
+    "GCPProjectId": "",
+    "GCPServiceAccountEmail": "",
+    "AWSLambdaRoleArn": "",
+
+    "functionDeployment": [
+        {
+            "provider_name": "gcp",
+            "deployment_region": "europe-west1",
+            "function_regions": [
+                "europe-west1"
+            ],
+            "invocation_count": 8,
+            "memory_config": [
+                128,
+                256,
+                512,
+                768,
+                1024,
+                1536,
+                2048
+            ]
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+order,provider,region,memory,memory_unit,storage_name,storage_provider,storage_region,statement_range,parallel,parallel_factor,code_exec_time_ns,function_exec_time_ns,total_exec_time_ns,download_time_ns,upload_time_ns,invocation_latency_ns,download_bandwidth_mbs,upload_bandwidth_mbs
+1,gcp,europe-west1,512,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,6-6,True,2,110454954112.0,115275181615.75,115423419145.75,7313448308.5,2166558449.5,155698837.25,15.381725476039538,1.9844777150569628
+4,gcp,europe-west1,512,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,11-12,False,1,20951375094.5,39077922809.0,39262515229.0,7372872753.5,9888465584.0,173004622.0,16.52382809299784,3.7133727825685816
+5,gcp,europe-west1,512,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,13-14,False,1,2361309772.5,4964079201.0,5149687208.0,2419386142.5,151560573.0,199475782.0,15.158813777117242,0.09247892495974633
+0,gcp,europe-west1,512,MB,gs://file-bucket-europe-west1-8db46112/,gcp,europe-west1,1-5,False,1,15648773699.5,20573271696.5,20824722770.5,910981777.5,4113927225.5,292086919.0,6.664028294459922,1.9779181617100654

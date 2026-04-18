@@ -1,0 +1,9 @@
+order,provider,region,memory,memory_unit,storage_name,storage_provider,storage_region,statement_range,parallel,parallel_factor,code_exec_time_ns,function_exec_time_ns,total_exec_time_ns,download_time_ns,upload_time_ns,invocation_latency_ns,download_bandwidth_mbs,upload_bandwidth_mbs
+0,aws,eu-central-1,1536,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,1-1,False,1,6516.5,5312012.5,132633042.0,0.0,0.0,127342621.0,,
+1,aws,eu-central-1,1536,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,2-4,False,1,3914350458.5,5498416887.0,5689991145.5,506220787.0,945910461.0,189155690.5,11.902878760866109,8.590015084471382
+2,aws,eu-central-1,1536,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,5-5,False,1,3144.0,5716408.0,134720749.5,0.0,0.0,126137036.5,,
+3,aws,eu-central-1,1536,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,6-6,True,2,30368142833.0,34216776660.75,34379411333.0,7208724915.0,447341774.0,162634672.25,15.610766462867506,9.610298055598783
+4,aws,eu-central-1,1536,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,7-8,False,1,7404996820.5,22580621011.0,22766743187.5,7545966711.5,7591924932.5,161867554.0,15.161473699599439,15.939677143895622
+5,aws,eu-central-1,1536,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,9-10,False,1,6373488008.0,21492100123.0,21629913833.0,7600152765.0,7424042221.5,137813710.0,15.907112366068533,16.28477661433515
+6,aws,eu-central-1,1536,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,11-12,False,1,9013536590.0,19520349649.5,19663090792.0,7984518976.0,2521454970.0,164375911.0,15.146130688594493,14.528528862446473
+7,aws,eu-central-1,1536,MB,s3://file-bucket-eu-central-1-fdcb708b/,aws,eu-central-1,13-14,False,1,999055754.0,3456917277.5,3635930250.0,2376506815.0,92044939.5,179012972.5,15.414675946943245,0.15528214476285898

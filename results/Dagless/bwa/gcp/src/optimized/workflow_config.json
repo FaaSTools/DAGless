@@ -1,0 +1,41 @@
+[
+{
+  "order": 0,
+  "statementRange": {"start":1,"end":5},
+  "memory": 768,
+  "provider": "gcp",
+  "region": "europe-west1",
+  "downloadFilePaths": ["/function/NC_000913.3-hipA7.fasta", "/function/bwa"],
+  "uploadFilePaths": ["/function/NC_000913.3-hipA7.fasta.pac", "/function/NC_000913.3-hipA7.fasta.amb", "/function/NC_000913.3-hipA7.fasta.ann", "/function/NC_000913.3-hipA7.fasta.bwt", "/function/NC_000913.3-hipA7.fasta.sa"],
+  "forEachIterations": [],
+  "inputVariables": [],
+  "outputVariables": [{"identifier":"alignInputs","type":"java.util.List<dev.simon.model.AlignInput>","parallel":"false"}, {"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}],
+  "parallel": false
+},
+{
+  "order": 1,
+  "statementRange": {"start":6,"end":6},
+  "memory": 768,
+  "provider": "gcp",
+  "region": "europe-west1",
+  "downloadFilePaths": [],
+  "uploadFilePaths": [],
+  "forEachIterations": [{"downloadFilePaths":["/function/bwa","/function/NC_000913.3-hipA7.fasta.bwt","/function/hipa7_reads_R1.fastq"],"uploadFilePaths":["/function/aln_sa1.sai"],"iterationObject":{"inputFasta":"NC_000913.3-hipA7.fasta","inputFastq":"hipa7_reads_R1.fastq","outputSai":"aln_sa1.sai"}},{"downloadFilePaths":["/function/bwa","/function/hipa7_reads_R2.fastq","/function/NC_000913.3-hipA7.fasta.bwt"],"uploadFilePaths":["/function/aln_sa2.sai"],"iterationObject":{"inputFasta":"NC_000913.3-hipA7.fasta","inputFastq":"hipa7_reads_R2.fastq","outputSai":"aln_sa2.sai"}}],
+  "inputVariables": [{"identifier":"alignInputs","type":"java.util.List<dev.simon.model.AlignInput>","parallel":"true"}, {"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}],
+  "outputVariables": [{"identifier":"alignInputs","type":"java.util.List<dev.simon.model.AlignInput>","parallel":"true"}, {"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}],
+  "parallel": true
+},
+{
+  "order": 2,
+  "statementRange": {"start":7,"end":14},
+  "memory": 1536,
+  "provider": "gcp",
+  "region": "europe-west1",
+  "downloadFilePaths": ["/function/hipa7_reads_R2.fastq", "/function/bwa", "/function/NC_000913.3-hipA7.fasta.pac", "/function/NC_000913.3-hipA7.fasta.amb", "/function/NC_000913.3-hipA7.fasta.ann", "/function/NC_000913.3-hipA7.fasta.bwt", "/function/hipa7_reads_R1.fastq", "/function/aln_sa2.sai", "/function/NC_000913.3-hipA7.fasta.sa", "/function/aln_sa1.sai"],
+  "uploadFilePaths": ["/function/NC_000913.3sorted.sam", "/function/NC_000913.3.sam", "/function/NC_000913.3sorted.bam", "/function/NC_000913.3sorted.bam.bai"],
+  "forEachIterations": [],
+  "inputVariables": [{"identifier":"alignInputs","type":"java.util.List<dev.simon.model.AlignInput>","parallel":"false"}, {"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}],
+  "outputVariables": [],
+  "parallel": false
+}
+]

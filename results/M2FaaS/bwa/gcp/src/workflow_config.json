@@ -1,0 +1,62 @@
+[
+{
+  "order": 0,
+  "statementRange": {"start":1,"end":5},
+  "downloadFilePaths": [],
+  "uploadFilePaths": [],
+  "forEachIterations": [],
+  "inputVariables": [],
+  "outputVariables": [{"identifier":"alignInputs","type":"java.util.List<dev.simon.model.AlignInput>","parallel":"false"}, {"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}],
+  "parallel": false
+},
+{
+  "order": 1,
+  "statementRange": {"start":6,"end":6},
+  "downloadFilePaths": [],
+  "uploadFilePaths": [],
+  "forEachIterations": [],
+  "inputVariables": [{"identifier":"alignInputs","type":"java.util.List<dev.simon.model.AlignInput>","parallel":"false"}, {"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}],
+  "outputVariables": [{"identifier":"alignInputs","type":"java.util.List<dev.simon.model.AlignInput>","parallel":"false"}, {"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}],
+  "parallel": false
+},
+{
+  "order": 2,
+  "statementRange": {"start":7,"end":8},
+  "downloadFilePaths": [],
+  "uploadFilePaths": [],
+  "forEachIterations": [],
+  "inputVariables": [{"identifier":"alignInputs","type":"java.util.List<dev.simon.model.AlignInput>","parallel":"false"}, {"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}],
+  "outputVariables": [{"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}, {"identifier":"outputSam","type":"java.lang.String","parallel":"false"}],
+  "parallel": false
+},
+{
+  "order": 3,
+  "statementRange": {"start":9,"end":10},
+  "downloadFilePaths": [],
+  "uploadFilePaths": [],
+  "forEachIterations": [],
+  "inputVariables": [{"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}, {"identifier":"outputSam","type":"java.lang.String","parallel":"false"}],
+  "outputVariables": [{"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}, {"identifier":"outputSortedSam","type":"java.lang.String","parallel":"false"}],
+  "parallel": false
+},
+{
+  "order": 4,
+  "statementRange": {"start":11,"end":12},
+  "downloadFilePaths": [],
+  "uploadFilePaths": [],
+  "forEachIterations": [],
+  "inputVariables": [{"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}, {"identifier":"outputSortedSam","type":"java.lang.String","parallel":"false"}],
+  "outputVariables": [{"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}, {"identifier":"outputSortedBam","type":"java.lang.String","parallel":"false"}],
+  "parallel": false
+},
+{
+  "order": 5,
+  "statementRange": {"start":13,"end":14},
+  "downloadFilePaths": [],
+  "uploadFilePaths": [],
+  "forEachIterations": [],
+  "inputVariables": [{"identifier":"bwa","type":"dev.simon.BWA","parallel":"false"}, {"identifier":"outputSortedBam","type":"java.lang.String","parallel":"false"}],
+  "outputVariables": [],
+  "parallel": false
+}
+]

@@ -1,0 +1,9 @@
+order,provider,region,memory,memory_unit,storage_name,storage_provider,storage_region,statement_range,parallel,parallel_factor,code_exec_time_ns,function_exec_time_ns,total_exec_time_ns,download_time_ns,upload_time_ns,invocation_latency_ns,download_bandwidth_mbs,upload_bandwidth_mbs
+0,gcp,europe-west1,1024,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,1-1,False,1,9691.5,5700504.5,116969395.5,0.0,0.0,110289958.5,,
+1,gcp,europe-west1,1024,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,2-4,False,1,8060692789.0,10588321019.5,10711166395.5,466818856.5,2076087227.5,151548119.5,13.300509056117715,3.9127146999530322
+2,gcp,europe-west1,1024,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,5-5,False,1,3826.5,4822534.5,114029667.0,0.0,0.0,108147414.0,,
+3,gcp,europe-west1,1024,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,6-6,True,2,61410983804.0,65403565015.5,65564280812.5,3891019728.5,1130217665.0,150614232.5,28.91738636915155,3.819188182201514
+4,gcp,europe-west1,1024,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,7-8,False,1,13658312641.0,49306500473.0,49445394917.0,4865314559.5,30683619434.5,162817821.0,23.598670171527303,3.940409264736701
+5,gcp,europe-west1,1024,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,9-10,False,1,15000060551.0,36918801513.0,37034960792.0,5225307637.0,16686262816.0,173513617.0,23.136335388935876,7.24515017731098
+6,gcp,europe-west1,1024,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,11-12,False,1,11652014126.0,21829092364.5,21980717333.5,4041447593.5,6118757003.0,143769446.0,29.913796166380447,5.9872075803702085
+7,gcp,europe-west1,1024,MB,gs://file-bucket-europe-west1-512eeb22/,gcp,europe-west1,13-14,False,1,1313783134.5,2871254515.5,3008809979.0,1465862988.0,74544620.5,119622374.5,25.03112239527456,0.18802420929122654
